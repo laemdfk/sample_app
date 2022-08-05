@@ -4,7 +4,7 @@
 <% @lists.each do |list| %>
  <div>
   <p>タイトル</p>
-  <%= list.title %>
+  <%= link_to list.title, list_path(list.id) %>
  </div>
  <div>
   <p>本文</p>

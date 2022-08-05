@@ -1,2 +1,17 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<h2>
+  <%= @list.title %>の詳細画面
+</h2>
+
+<div>
+  本文
+  <p>
+    <%= @list.body %>
+  </p>
+</div>
+
+<div>
+  <%= link_to "編集する", edit_list_path(@list.id) %>
+  |
+  <%= link_to "削除する",list_path(@list.id), method: :delete, "data-comfirm" => "この操作は取り消せませんが、よろしいですか？" %>
+  <!--methodにdestroyはない-->
+</div>
