@@ -10,6 +10,14 @@
   <p>本文</p>
    <%= list.body %>
  </div>
+
+ <div>
+ <% if list.image.attached? %>
+    <%= image_tag list.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'noimage.jpg', size: "200x200" %>
+  <% end %>
+ </div>
 <% end %>
 
 
