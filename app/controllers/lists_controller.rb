@@ -5,8 +5,11 @@ class ListsController < ApplicationController
 
   def create
     @list_new = List.new(list_params)
-    @list_new.save
-    redirect_to lists_path
+    if @list_new.save
+     redirect_to lists_path
+    else
+      render :new
+    end
   end
 
   def show
